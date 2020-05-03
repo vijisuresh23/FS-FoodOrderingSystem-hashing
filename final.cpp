@@ -630,7 +630,7 @@ begin:
             if (o.orderno > 5)
             {
                 cout << "You cannot place more than 5 orders";
-                for (int i = 0; i <= 100000000000000; i++)
+                for (int i = 0; i <= 10000000000; i++)
                     i++;
                 goto begin;
             }
