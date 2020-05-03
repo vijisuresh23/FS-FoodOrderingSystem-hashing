@@ -9,6 +9,7 @@
 #include <stdlib.h>
 #include <string>
 #include <vector>
+
 using namespace std;
 
 #ifdef _WIN32
@@ -434,6 +435,7 @@ void modify()
 {
     system(CLEAR);
     order obj[50];
+    int pp[50];
     fstream f3, out1;
     char id[10];
     int i, j;
@@ -492,14 +494,22 @@ void modify()
                 if (strcmp(obj[j].size, s1) == 0)
                 {
                     price = qt * 150;
-                    char str[100];
-                    sprintf(str, "%d", price);
-                    // *obj[j].price1 = (char)price;
+                    string s = to_string(price);
+                    char cstr[s.size() + 1];
+                    for (int i = 0; i < s.size() + 1; i++)
+                        cstr[i] = s[i];
+                    cstr[s.size()] = '\0';
+                    strcpy(obj[j].price1, cstr);
                 }
                 else if (strcmp(obj[j].size, s2) == 0)
                 {
                     price = qt * 300;
-                    *obj[j].price1 = (char)(price);
+                    string s = to_string(price);
+                    char cstr[s.size() + 1];
+                    for (int i = 0; i < s.size() + 1; i++)
+                        cstr[i] = s[i];
+                    cstr[s.size()] = '\0';
+                    strcpy(obj[j].price1, cstr);
                 }
                 else
                 {
@@ -512,12 +522,22 @@ void modify()
                 if (strcmp(obj[j].size, s1) == 0)
                 {
                     price = qt * 60;
-                    *obj[j].price1 = char(price);
+                    string s = to_string(price);
+                    char cstr[s.size() + 1];
+                    for (int i = 0; i < s.size() + 1; i++)
+                        cstr[i] = s[i];
+                    cstr[s.size()] = '\0';
+                    strcpy(obj[j].price1, cstr);
                 }
                 else if (strcmp(obj[j].size, s2) == 0)
                 {
                     price = qt * 120;
-                    *obj[j].price1 = char(price);
+                    string s = to_string(price);
+                    char cstr[s.size() + 1];
+                    for (int i = 0; i < s.size() + 1; i++)
+                        cstr[i] = s[i];
+                    cstr[s.size()] = '\0';
+                    strcpy(obj[j].price1, cstr);
                 }
                 else
                 {
@@ -530,12 +550,22 @@ void modify()
                 if (strcmp(obj[j].size, s1) == 0)
                 {
                     price = qt * 80;
-                    *obj[j].price1 = char(price);
+                    string s = to_string(price);
+                    char cstr[s.size() + 1];
+                    for (int i = 0; i < s.size() + 1; i++)
+                        cstr[i] = s[i];
+                    cstr[s.size()] = '\0';
+                    strcpy(obj[j].price1, cstr);
                 }
                 else if (strcmp(obj[j].size, s2) == 0)
                 {
                     price = qt * 120;
-                    *obj[j].price1 = char(price);
+                    string s = to_string(price);
+                    char cstr[s.size() + 1];
+                    for (int i = 0; i < s.size() + 1; i++)
+                        cstr[i] = s[i];
+                    cstr[s.size()] = '\0';
+                    strcpy(obj[j].price1, cstr);
                 }
                 else
                 {
@@ -600,7 +630,7 @@ begin:
             if (o.orderno > 5)
             {
                 cout << "You cannot place more than 5 orders";
-                for (int i = 0; i <= 100000000; i++)
+                for (int i = 0; i <= 100000000000000; i++)
                     i++;
                 goto begin;
             }
